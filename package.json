@@ -1,0 +1,50 @@
+{
+  "name": "office-mailappuploader",
+  "displayName": "MailAppUploader",
+  "description": "Uploads the manifest.xml of your mailapp",
+  "version": "0.0.1",
+  "publisher": "MKnor",
+  "engines": {
+    "vscode": "^0.10.1"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.sayHello",
+    "onCommand:extension.uploadManifestXml"
+  ],
+  "main": "./out/src/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.sayHello",
+        "title": "Hello World"
+      },
+      {
+        "command": "extension.uploadManifestXml",
+        "title": "Upload manifest to Office 365"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.uploadManifestXml",
+        "key": "Ctrl+Alt+u"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+    "compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
+  },
+  "devDependencies": {
+    "typescript": "^1.6.2",
+    "vscode": "0.10.x"
+  },
+  "dependencies": {
+    "compress": "^0.99.0",
+    "promise": "^7.1.1",
+    "soap": "^0.11.4",
+    "xml2js": "^0.4.16"
+  }
+}
