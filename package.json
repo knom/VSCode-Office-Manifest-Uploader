@@ -1,9 +1,9 @@
 {
-  "name": "office-mailappuploader",
-  "displayName": "MailAppUploader",
-  "description": "Uploads the manifest.xml of your mailapp",
+  "name": "office-mailapp-manifestuploader",
+  "displayName": "Office Outlook MailApp Manifest Uploader",
+  "description": "Uploads the manifest.xml of your Outlook Mail App into Exchange or Office 365",
   "version": "0.0.1",
-  "publisher": "MKnor",
+  "publisher": "knom",
   "engines": {
     "vscode": "^0.10.1"
   },
@@ -18,7 +18,7 @@
     "commands": [
       {
         "command": "extension.uploadManifestXml",
-        "title": "Upload manifest to Office 365"
+        "title": "Upload Outlook Mail App manifest"
       }
     ],
     "keybindings": [

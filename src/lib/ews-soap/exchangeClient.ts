@@ -1,5 +1,5 @@
-var path = require('path'),
-    xml2js = require('xml2js');
+let path = require('path');
+let xml2js = require('xml2js');
 
 exports.client = null;
 
