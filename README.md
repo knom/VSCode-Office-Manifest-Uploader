@@ -2,7 +2,6 @@
 Uploads the [manifest.xml](https://msdn.microsoft.com/en-us/library/office/dn642483.aspx) of your [Outlook Mail App](https://msdn.microsoft.com/EN-US/library/office/fp161135.aspx) into Office 365 or your Exchange Server.
 
 ![screenshot](https://raw.githubusercontent.com/knom/VSCode-Office-Manifest-Uploader/master/readme-assets/screen1.png)
-![screenshot](https://raw.githubusercontent.com/knom/VSCode-Office-Manifest-Uploader/master/readme-assets/screen2.png)
 
 Available as Open Source on [GitHub](https://github.com/knom/VSCode-Office-Manifest-Uploader/).
  
