@@ -2,8 +2,22 @@
     "name": "office-mailapp-manifestuploader",
     "displayName": "Office MailApp Manifest Uploader",
     "description": "Uploads the manifest.xml of your Outlook Mail App into Exchange or Office 365",
-    "version": "0.0.3",
+    "version": "0.0.8",
     "publisher": "knom",
+    "icon": "readme-assets/logo.png",
+    "galleryBanner": {
+        "color": "#DC3C00",
+        "theme": "dark"
+    },
+    "license": "Apache License",
+    "bugs": {
+        "url": "https://github.com/knom/VSCode-Office-Manifest-Uploader/issues"
+    },
+    "homepage": "https://github.com/knom/VSCode-Office-Manifest-Uploader/",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/knom/VSCode-Office-Manifest-Uploader.git"
+    },
     "engines": {
         "vscode": "^0.10.1"
     },
