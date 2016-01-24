@@ -1,6 +1,5 @@
 # Office Outlook MailApp Manifest Uploader
-Uploads the [manifest.xml](https://msdn.microsoft.com/en-us/library/office/dn642483.aspx) of your [Outlook Mail App](https://msdn.microsoft.com/EN-US/library/office/fp161135.aspx) 
- into Office 365 or your Exchange Server.
+Uploads the [manifest.xml](https://msdn.microsoft.com/en-us/library/office/dn642483.aspx) of your [Outlook Mail App](https://msdn.microsoft.com/EN-US/library/office/fp161135.aspx) into Office 365 or your Exchange Server.
  
 ## How to install
 * Press (`Cmd+E` on OSX or `Ctrl+E` on Windows and Linux)
@@ -16,11 +15,11 @@ Uploads the [manifest.xml](https://msdn.microsoft.com/en-us/library/office/dn642
  
 ## Configuration options
 User & server settings can be stored in `User Settings`.
-| Option | Description |
-|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
-| officeManifestUploader.userName | The login for your Office 365 or Exchange, e.g. user@foo.com. |
-| officeManifestUploader.password | The password. It's recommended NOT to store it, but rather skip this setting. Then you will be prompted for the password every time. |
-| officeManifestUploader.serverUrl | The server address, e.g. mail.office365.com. |12345
 
+| **Option**                 | **Description**      |
+|------------------------|----------------------------------------------------|
+| `officeManifestUploader.userName`  | The login for your Office 365 or Exchange, e.g. user@foo.com.                                                                      |
+| `officeManifestUploader.password` | The password. It's recommended NOT to store it, but rather skip this setting. Then you will be prompted for the password every time. |
+| `officeManifestUploader.serverUrl` | The server address, e.g. mail.office365.com. |
 
 ##**Enjoy!**##
