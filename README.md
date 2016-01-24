@@ -26,4 +26,10 @@ User & server settings can be stored in `User Settings`.
 | `officeManifestUploader.password` | The password. It's recommended NOT to store it, but rather skip this setting. Then you will be prompted for the password every time. |
 | `officeManifestUploader.serverUrl` | The server address, e.g. mail.office365.com. |
 
+## License
+Published as Open Source under Apache 2.0 License.
+
+## Usage Feedback & Bugs
+If you find any bugs or have other feedback, please [submit both to the GitHub page](https://github.com/knom/VSCode-Office-Manifest-Uploader/issues).
+
 ##**Enjoy!**##
