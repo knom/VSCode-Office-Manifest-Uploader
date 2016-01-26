@@ -103,6 +103,7 @@ export abstract class OfficeApplicationStrategy {
                                     statusBarItem.hide();
                                     vscode.window.showInformationMessage("Succeeded " + this.description + "!");
                                     this.outChannel.appendLine("Succeeded " + this.description + "!");
+                                    this.outChannel.appendLine("Check https:/" + server + "/owa/#path=/options/manageapps for seeing installed apps on the server.");
                                 }, (err) => {
                                     statusBarItem.hide();
                                     vscode.window.showErrorMessage("An error occurred while " + this.description + ": " + err);
