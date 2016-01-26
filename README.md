@@ -32,4 +32,4 @@ Published as Open Source under Apache 2.0 License.
 ## Usage Feedback & Bugs
 If you find any bugs or have other feedback, please [submit both to the GitHub page](https://github.com/knom/VSCode-Office-Manifest-Uploader/issues).
 
-##**Enjoy!**##
+## **Enjoy!** ##

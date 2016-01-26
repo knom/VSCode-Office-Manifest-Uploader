@@ -2,14 +2,14 @@
     "name": "office-mailapp-manifestuploader",
     "displayName": "Office MailApp Manifest Uploader",
     "description": "Uploads the manifest.xml of your Outlook Mail App into Exchange or Office 365",
-    "version": "0.0.10",
+    "version": "0.0.18",
     "publisher": "knom",
     "icon": "readme-assets/logo.png",
     "galleryBanner": {
         "color": "#DC3C00",
         "theme": "dark"
     },
-    "license": "Apache License",
+    "license": "Apache-2.0",
     "bugs": {
         "url": "https://github.com/knom/VSCode-Office-Manifest-Uploader/issues"
     },
@@ -25,26 +25,35 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.uploadManifestXml"
+        "onCommand:officeAppExt.installApp",
+        "onCommand:officeAppExt.uninstallApp"
     ],
     "main": "./out/src/extension",
     "contributes": {
         "commands": [
             {
-                "command": "extension.uploadManifestXml",
+                "command": "officeAppExt.installApp",
                 "title": "Upload Outlook Mail App manifest"
+            },
+            {
+                "command": "officeAppExt.uninstallApp",
+                "title": "Uninstall Outlook Mail App"
             }
         ],
         "keybindings": [
             {
-                "command": "extension.uploadManifestXml",
+                "command": "officeAppExt.installApp",
+                "key": "Ctrl+Alt+i"
+            },
+            {
+                "command": "officeAppExt.uninstallApp",
                 "key": "Ctrl+Alt+u"
             }
         ],
         "configuration": {
             "title": "Configuration",
             "properties": {
-                "officeManifestUploader.username": {
+                "officeManifestUploader.userName": {
                     "type": "string",
                     "default": "foo@foo.com",
                     "description": "The user name for the upload."
@@ -69,6 +78,7 @@
         "compress": "^0.99.0",
         "fs": "0.0.2",
         "promise": "^7.1.1",
+        "q": "^1.4.1",
         "soap": "^0.11.4",
         "tslint": "^3.2.2",
         "xml2js": "^0.4.16"
