@@ -80,12 +80,14 @@ export abstract class OfficeApplicationStrategy {
                                 vscode.window.showInformationMessage("Starting " + this.description + "...");
 
                                 let statusBarItem = vscode.window.createStatusBarItem();
-                                statusBarItem.text = "$(cloud-upload) " + this.description + "...";
+
+                                let desc = this.description.charAt(0).toUpperCase() + this.description.slice(1);
+                                statusBarItem.text = "$(cloud-upload) " + desc + "...";
                                 statusBarItem.show();
 
                                 this.executeCore(truePath, user, pwd, server).then(() => {
                                     statusBarItem.hide();
-                                    vscode.window.showInformationMessage("Succeeded " + this.description + " !");
+                                    vscode.window.showInformationMessage("Succeeded " + this.description + "!");
                                 }, (err) => {
                                     statusBarItem.hide();
                                     vscode.window.showErrorMessage("An error occurred while " + this.description + ": " + err);
