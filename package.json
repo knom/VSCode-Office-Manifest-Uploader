@@ -2,7 +2,7 @@
     "name": "office-mailapp-manifestuploader",
     "displayName": "Office MailApp Manifest Uploader",
     "description": "Uploads the manifest.xml of your Outlook Mail App into Exchange or Office 365",
-    "version": "0.0.19",
+    "version": "0.0.20",
     "publisher": "knom",
     "icon": "readme-assets/logo.png",
     "galleryBanner": {
@@ -72,15 +72,14 @@
     },
     "devDependencies": {
         "typescript": "^1.6.2",
-        "vscode": "0.10.x"
+        "vscode": "0.10.x",
+        "tslint": "^3.2.2"
     },
     "dependencies": {
         "compress": "^0.99.0",
         "fs": "0.0.2",
-        "promise": "^7.1.1",
         "q": "^1.4.1",
         "soap": "^0.11.4",
-        "tslint": "^3.2.2",
         "xml2js": "^0.4.16"
     }
 }

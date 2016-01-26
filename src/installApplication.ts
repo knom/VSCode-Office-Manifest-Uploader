@@ -2,8 +2,7 @@ import * as vscode from "vscode";
 import * as q from "q";
 import * as fs from "fs";
 import * as ews from "./lib/ews-soap/exchangeClient";
-
-let xml2js = require("xml2js");
+import * as xml2js from "xml2js";
 
 export abstract class OfficeApplicationStrategy {
     constructor(public description: string) {
@@ -13,54 +12,49 @@ export abstract class OfficeApplicationStrategy {
         let config = vscode.workspace.getConfiguration("officeManifestUploader");
         let userName = config.get<string>("userName");
 
-        if (userName && userName !== "foo@foo.com")
-        {
-            return new Promise((f, r) => {
-               f(userName);
-            });
+        if (userName && userName !== "foo@foo.com") {
+            let promise = q.defer<string>();
+            promise.resolve(userName);
+            return promise.promise;
         }
 
         return vscode.window.showInputBox({
-                placeHolder: "user@foo.com",
-                prompt: "Enter your username"
-            });
+            placeHolder: "user@foo.com",
+            prompt: "Enter your username"
+        });
     }
 
-    protected showPwdBox(): Thenable<string>
-    {
+    protected showPwdBox(): Thenable<string> {
         let config = vscode.workspace.getConfiguration("officeManifestUploader");
         let password = config.get<string>("password");
 
-        if (password)
-        {
-            return new Promise((f, r) => {
-               f(password);
-            });
+        if (password) {
+            let promise = q.defer<string>();
+            promise.resolve(password);
+            return promise.promise;
         }
 
         return vscode.window.showInputBox({
-                password: true,
-                placeHolder: "password",
-                prompt: "Enter your password"
-            });
+            password: true,
+            placeHolder: "password",
+            prompt: "Enter your password"
+        });
     }
 
-    protected showServerBox(): Thenable<string>
-    {
+    protected showServerBox(): Thenable<string> {
         let config = vscode.workspace.getConfiguration("officeManifestUploader");
         let serverUrl = config.get<string>("serverUrl");
 
-        if (serverUrl)
-        {
-            return new Promise((f, r) => {
-                f(serverUrl);
-            });
+        if (serverUrl) {
+            let promise = q.defer<string>();
+            promise.resolve(serverUrl);
+            return promise.promise;
         }
 
         return vscode.window.showInputBox({
             password: false,
             placeHolder: "mail.office365.com",
-            prompt: "Server name:"
+            prompt: "Server name"
         });
     }
 
@@ -70,7 +64,7 @@ export abstract class OfficeApplicationStrategy {
             return;
         }
 
-        vscode.window.showInputBox({ placeHolder: "manifest.xml", prompt: "Manifest file path", value: "manifest.xml"}).then((filename) => {
+        vscode.window.showInputBox({ placeHolder: "manifest.xml", prompt: "Manifest file path", value: "manifest.xml" }).then((filename) => {
             if (filename === undefined)
                 return;
             else {
@@ -91,7 +85,7 @@ export abstract class OfficeApplicationStrategy {
 
                                 this.executeCore(truePath, user, pwd, server).then(() => {
                                     statusBarItem.hide();
-                                    vscode.window.showInformationMessage(this.description + " successfully!");
+                                    vscode.window.showInformationMessage("Succeeded " + this.description + " !");
                                 }, (err) => {
                                     statusBarItem.hide();
                                     vscode.window.showErrorMessage("An error occurred while " + this.description + ": " + err);
@@ -123,7 +117,7 @@ export class InstallApplication extends OfficeApplicationStrategy {
         let manifest = new Buffer(data).toString("base64");
 
         let client = new ews.EWSClient();
-        client.initialize({ url: serverUrl, username: userName, password: password},
+        client.initialize({ url: serverUrl, username: userName, password: password },
             (err: any) => {
                 client.installApp(manifest, (err: any) => {
                     if (err) {
@@ -132,8 +126,8 @@ export class InstallApplication extends OfficeApplicationStrategy {
                     else {
                         promise.resolve();
                     }
+                });
             });
-        });
 
         return promise.promise;
     }
@@ -151,7 +145,7 @@ export class UninstallApplication extends OfficeApplicationStrategy {
 
         this.getApplicationIdOutofXml(manifestXml).then((appId) => {
             let client = new ews.EWSClient();
-            client.initialize({ url: serverUrl, username: userName, password: password},
+            client.initialize({ url: serverUrl, username: userName, password: password },
                 (err: any) => {
                     client.uninstallApp(appId, (err: any) => {
                         if (err) {
@@ -160,8 +154,8 @@ export class UninstallApplication extends OfficeApplicationStrategy {
                         else {
                             promise.resolve();
                         }
+                    });
                 });
-            });
         });
 
         return promise.promise;
@@ -171,22 +165,15 @@ export class UninstallApplication extends OfficeApplicationStrategy {
         let promise = q.defer();
 
         let parser = new xml2js.Parser(
-        {
-            "explicitArray": false,
-            "explicitRoot": false,
-            "attrkey": "@"
-        });
+            {
+                "explicitArray": false,
+                "explicitRoot": false,
+                "attrkey": "@"
+            });
 
         parser.parseString(manifestXml, (err, result) => {
             let id = result["Id"];
             promise.resolve(id);
-            // if (responseCode !== "NoError") {
-            //     promise.reject(new Error(responseCode));
-            //     return;
-            // }
-            // else {
-            //     
-            // }
         });
 
         return promise.promise;
