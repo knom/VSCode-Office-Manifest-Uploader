@@ -33,11 +33,11 @@
         "commands": [
             {
                 "command": "officeAppExt.installApp",
-                "title": "Upload Outlook Mail App manifest"
+                "title": "Install Outlook Mail App remotely"
             },
             {
                 "command": "officeAppExt.uninstallApp",
-                "title": "Uninstall Outlook Mail App"
+                "title": "Uninstall Outlook Mail App remotely"
             }
         ],
         "keybindings": [
