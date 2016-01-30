@@ -15,6 +15,7 @@ Available as Open Source on [GitHub](https://github.com/knom/VSCode-Office-Manif
 * Press `Cmd+Alt+i` on OSX or `Ctrl+Alt+i` on Windows and Linux
 * Or press `F1` and type `Install Outlook Mail App remotely`
 * You will be prompted for username, password and server address of the target server.
+
 ### Uninstalling an add-in to Office 365 or Exchange
 * Press `Cmd+Alt+u` on OSX or `Ctrl+Alt+u` on Windows and Linux
 * Or press `F1` and type `Uninstall Outlook Mail App remotely`
