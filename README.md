@@ -11,6 +11,7 @@ Available as Open Source on [GitHub](https://github.com/knom/VSCode-Office-Manif
 * Or click on the little download button ![downloadbutton](https://raw.githubusercontent.com/knom/VSCode-Office-Manifest-Uploader/master/readme-assets/download.png)
 
 ## Usage
+
 ### Installing an add-in to Office 365 or Exchange
 * Press `Cmd+Alt+i` on OSX or `Ctrl+Alt+i` on Windows and Linux
 * Or press `F1` and type `Install Outlook Mail App remotely`
