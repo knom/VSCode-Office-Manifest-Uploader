@@ -1,0 +1,10 @@
+{
+  "globalDependencies": {
+    "node": "registry:dt/node#6.0.0+20161229171858"
+  },
+  "dependencies": {
+    "q": "registry:dt/q#0.0.0+20161119044246",
+    "soap": "registry:dt/soap#0.0.0+20161227225211",
+    "xml2js": "registry:dt/xml2js#0.0.0+20161130184909"
+  }
+}

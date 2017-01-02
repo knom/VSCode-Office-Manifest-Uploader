@@ -1,8 +1,11 @@
-import * as vscode from "vscode";
-import * as q from "q";
-import * as fs from "fs";
-import * as ews from "./lib/ews-soap/exchangeClient";
-import * as xml2js from "xml2js";
+/// <reference path="../typings/index.d.ts" />
+import vscode = require("vscode");
+import q = require("q");
+import fs = require("fs");
+import ews = require("./lib/ews-soap/exchangeClient");
+
+import xml2js = require("xml2js");
+import path = require("path");
 
 export abstract class OfficeApplicationStrategy {
     protected outChannel: vscode.OutputChannel;
@@ -77,7 +80,6 @@ export abstract class OfficeApplicationStrategy {
                 return;
             }
             else {
-                let path = require("path");
                 let f = path.join(vscode.workspace.rootPath, filename);
 
                 this.outChannel.appendLine("Opening file " + f);
@@ -196,7 +198,7 @@ export class UninstallApplication extends OfficeApplicationStrategy {
                 "attrkey": "@"
             });
 
-        parser.parseString(manifestXml, (err, result) => {
+        parser.parseString(manifestXml, (err:any, result:any) => {
             let id = result["Id"];
             promise.resolve(id);
         });

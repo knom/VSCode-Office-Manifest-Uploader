@@ -2,10 +2,18 @@
 	"compilerOptions": {
 		"module": "commonjs",
 		"target": "es5",
-		"outDir": "out",
-		"noLib": true,
-		"sourceMap": true
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+		"outDir": "out"
 	},
+	"files": [
+		"src/installApplication.ts",
+		"src/extension.ts",
+		"src/lib/ews-soap/exchangeClient.ts",
+		"typings/index.d.ts"
+	],
 	"exclude": [
 		"node_modules"
 	]
